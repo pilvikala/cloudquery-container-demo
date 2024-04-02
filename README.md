@@ -1,4 +1,4 @@
-# CloudQuery GitHub Demo
+# CloudQuery Container Demo
 
 A demo project with CloudQuery, Metabase, and Postgres containers syncing Simple Analytics data with the [SimpleAnalytics](https://hub.cloudquery.io/plugins/source/simple-analytics/simple-analytics/latest/docs) source plugin.
 
