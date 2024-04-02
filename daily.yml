@@ -1,0 +1,32 @@
+---
+kind: source
+spec:
+  name: "simple-analytics"
+  path: "simple-analytics/simple-analytics"
+  version: "v2.0.0"
+  registry: cloudquery
+  backend_options:
+    table_name: "cq_state_simpleanalytics"
+    connection: "@@plugins.postgresql.connection"
+  tables: 
+    ["*"]
+  destinations: 
+    - "postgresql"
+  spec:
+    # plugin spec section
+    api_key: ${SA_API_KEY}
+    user_id: ${SA_USER_ID}
+    websites:
+      - hostname: cloudquery.io
+      - hostname: hub.cloudquery.io
+      - hostname: cloud.cloudquery.io
+      - hostname: docs.cloudquery.io
+---
+kind: destination
+spec:
+  name: postgresql
+  path: cloudquery/postgresql
+  registry: cloudquery
+  version: "v6.1.3"
+  spec:
+    connection_string: ${PG_CONNECTION_STRING}
